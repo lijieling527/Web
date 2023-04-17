@@ -6,14 +6,17 @@ let imageURL_Array=[
 ];
 
 
-
+var randomChildNumber,buffer
 $(function(){
     $("input").on("click",function(){
         //alert("Hi");
         //$("h1").text("Hello");
         //$("h1").text($("li:first").text());
         var numberOfListItem=$("li").length;
-        var randomChildNumber=Math.floor(Math.random()*numberOfListItem);
+        randomChildNumber=Math.floor(Math.random()*numberOfListItem);
+        while(randomChildNumber==buffer)
+            randomChildNumber=Math.floor(Math.random()*numberOfListItem);
+        buffer=randomChildNumber
         $("h1").text($("li").eq(randomChildNumber).text());
 
         $("img").attr("src",imageURL_Array[randomChildNumber]);

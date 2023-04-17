@@ -9,3 +9,10 @@ table{
 td{
     border-bottom: 1px solid blue;
 }
+
+table tr:nth-child(odd){
+    color: rgb(216, 2, 2);
+}
+table tr:nth-child(even){
+    color: rgb(13, 74, 204);
+}
